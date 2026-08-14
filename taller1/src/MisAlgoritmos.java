@@ -12,8 +12,23 @@ public class MisAlgoritmos implements Ordenamientos,Busquedas{
 
     @Override
     public int binarySearch(int[] arrayPorExplorar, int elementoABuscar) {
+        Int 
+
+        while (arrayPorExplorar[0] != elementoABuscar){
+
+
+                    //.length/2 + arrayPorExplorar.length/4;
+        }
+
+        //paso1
         int posicionMitad =arrayPorExplorar.length/2;
-        if (miArrey[posicionMitad];
+        //paso2
+        if (arrayPorExplorar[posicionMitad]>elementoABuscar){
+            //reviso a la derecha
+
+        }else{
+            //reviso a la izquierda
+        }
         System.out.println(posicionMitad);
         return 0;
     }
