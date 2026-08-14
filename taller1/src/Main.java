@@ -7,7 +7,7 @@ public class Main {
         misAlgoritmos.linearSearch(miArrey, 12);
 
         System.out.println(misAlgoritmos.linearSearch(miArrey, 12));
-
+        System.out.println(misAlgoritmos.binarySearch(miArrey, 12));
 
     }
 }
