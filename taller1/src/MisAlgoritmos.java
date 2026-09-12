@@ -12,7 +12,7 @@ public class MisAlgoritmos implements Ordenamientos,Busquedas{
 
     @Override
     public int binarySearch(int[] arrayPorExplorar, int elementoABuscar) {
-        Int 
+
 
         while (arrayPorExplorar[0] != elementoABuscar){
 
