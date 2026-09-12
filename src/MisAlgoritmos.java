@@ -1,35 +1,46 @@
 public class MisAlgoritmos implements Ordenamientos,Busquedas{
+
     @Override
+
     public int linearSearch(int[] arrayPorExplorar, int elementoABuscar) {
+
         for (int i = 0; i < arrayPorExplorar.length; i++) {
-            int elelmentoActual= arrayPorExplorar[i];
-            if (elelmentoActual == elementoABuscar){
+            int elementoActual = arrayPorExplorar[i];
+
+            if (elementoActual == elementoABuscar) {
                 return i;
             }
         }
+
         return -1;
     }
 
     @Override
     public int binarySearch(int[] arrayPorExplorar, int elementoABuscar) {
         int inicio = 0;
-        int fin = arrayPorExplorar.length - 1;
-        while (inicio <= fin) {
-            int mitad = (inicio + fin) / 2;
-            if (arrayPorExplorar[mitad] == elementoABuscar) {
-                return mitad;
-            }
-            if (arrayPorExplorar[mitad] < elementoABuscar) {
-                inicio = mitad + 1;
+        int finalArray = arrayPorExplorar.length - 1;
+
+        while (inicio <= finalArray) {
+            int posicionMitad = (inicio + finalArray) / 2;
+            int elementoMitad = arrayPorExplorar[posicionMitad];
+
+            if (elementoMitad == elementoABuscar) {
+                return posicionMitad;
+
+            } else if (elementoMitad < elementoABuscar) {
+                inicio = posicionMitad + 1;
+
             } else {
-                fin = mitad - 1;
+                finalArray = posicionMitad - 1;
             }
         }
+
         return -1;
     }
 
     @Override
     public int[] bubbleSort(int[] arrayDesordenado) {
+
         for (int i = 0; i < arrayDesordenado.length - 1; i++) {
 
             for (int j = 0; j < arrayDesordenado.length - 1 - i; j++) {
@@ -48,38 +59,12 @@ public class MisAlgoritmos implements Ordenamientos,Busquedas{
 
     @Override
     public int[] selectionSort(int[] arrayDesordenado) {
-
-        for (int i = 0; i < arrayDesordenado.length - 1; i++) {
-            int posicionMenor = i;
-
-            for (int j = i + 1; j < arrayDesordenado.length; j++) {
-                if (arrayDesordenado[j] < arrayDesordenado[posicionMenor]) {
-                    posicionMenor = j;
-                }
-            }
-
-            int temporal = arrayDesordenado[i];
-            arrayDesordenado[i] = arrayDesordenado[posicionMenor];
-            arrayDesordenado[posicionMenor] = temporal;
-        }
-
-        return arrayDesordenado;
+        return new int[0];
     }
 
     @Override
     public int[] insertionSort(int[] arrayDesordenado) {
-        for (int i = 1; i < arrayDesordenado.length; i++) {
-            int elementoActual = arrayDesordenado[i];
-            int posicionAnterior = i - 1;
-            while (posicionAnterior >= 0
-                    && arrayDesordenado[posicionAnterior] > elementoActual) {
-                arrayDesordenado[posicionAnterior + 1]
-                        = arrayDesordenado[posicionAnterior];
-                posicionAnterior--;
-            }
-            arrayDesordenado[posicionAnterior + 1] = elementoActual;
-        }
-        return arrayDesordenado;
+        return new int[0];
     }
 
     @Override
