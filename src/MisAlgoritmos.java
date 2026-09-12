@@ -83,8 +83,23 @@ public class MisAlgoritmos implements Ordenamientos,Busquedas{
 
     @Override
     public int[] mergeSort(int[] arrayDesordenado) {
-        return new int[0];
-    }
+
+        for (int i = 1; i < arrayDesordenado.length; i++) {
+            int elementoActual = arrayDesordenado[i];
+            int posicionAnterior = i - 1;
+
+            while (posicionAnterior >= 0
+                    && arrayDesordenado[posicionAnterior] > elementoActual) {
+
+                arrayDesordenado[posicionAnterior + 1]
+                        = arrayDesordenado[posicionAnterior];
+
+                posicionAnterior--;
+            }
+            arrayDesordenado[posicionAnterior + 1] = elementoActual;
+        }
+        return arrayDesordenado;
+            }
 
     @Override
     public int[] quickSort(int[] arrayDesordenado) {
